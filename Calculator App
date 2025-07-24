@@ -1,0 +1,25 @@
+print("Welcome to calculator app")
+x=int(input("enter the first number :"))
+y=int(input("enter the second number :"))
+def sum(x,y):
+    return x+y
+def sub(x,y):
+    return x-y
+def mul(x,y):
+    return x*y
+def div(x,y):
+    return x/y
+operation = input("enter operation(add,sub,mul,div):=")
+if operation == "add" :
+    print ("result:", sum(x,y))  
+elif operation == "sub":
+    print ("result:",sub(x,y))
+elif operation == "mul":
+    print("result:",mul(x,y))
+elif operation == "div":
+    if y==0:
+        print("division by zero is not allowed")
+    else:
+        print("result:",div(x,y))  
+else: 
+    print("invalid operation")
