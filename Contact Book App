@@ -1,0 +1,69 @@
+#empty dictionary
+contacts = {}
+while True:
+    print("Contact book app")#
+    print('1.Create contact')
+    print('2.View contact')
+    print('3.Update contact')
+    print('4.Delete contact')
+    print('5.Search contact')
+    print('6.Exit')
+    choice =int(input("enter your choice = "))
+    if choice == 1:
+        name = input("Enter your name ")
+        if name in contacts:
+            print("contact name {name} already exists")
+        else:
+            number = input("Enter number = ")   
+            email = input("Enter email = ") 
+            address = input("Enter address = ")
+            contacts[name]={'number':int(number),'email':email,'address':address}
+            print("Contact name {name} has been created successfully !")
+    elif choice == 2:
+        name = input("enter contact name to view =")
+        if name in contacts:
+            contact = contacts[name]
+            print(' number :{number},email:{email},address:{address}') 
+        else:
+            print("contact not found")
+    elif choice == 3:
+         name = input("enter name to update contact =")
+         if name in contacts:
+              number = input("Enter update number = ")   
+              email = input("Enter update email = ") 
+              address = input("Enter  update address = ")
+              contacts[name]={'number':int(number),'email':email,'address':address}
+         else:
+             print("contact not found") 
+    elif choice == 4:
+        name = input("enter contact name to delete  =")
+        if name in contacts:
+            del contacts[name]
+            print("contact name {name} has been deleted")
+        else:
+            print("contact not found")    
+    elif choice == 5:
+        search_name = input("enter contact name to search =")   
+        found = False
+        for name,contact in contacts.items():
+            if search_name.lower() in name.lower():
+                print('found - name{name},number:{number},email:{email},address:{address}')
+                found = True
+        if not found:
+            print("no contact found with that name")
+    elif choice == 6:
+        print("exit")
+        break
+    else:
+        print("invalid input")
+                    
+                      
+
+
+
+
+
+                
+                 
+    
+ 
